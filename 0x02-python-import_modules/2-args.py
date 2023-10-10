@@ -4,11 +4,11 @@ import sys
 
 if __name__ == "__main__":
 
-    argc = len(sys.argv)
+    argc = len(sys.argv) - 1
 
-    if argc == 1:
+    if argc == 0:
         print("0 arguments.")
-    elif argc == 2:
+    elif argc == 1:
         print("1 argument:")
         print("1:", sys.argv[1])
     else:
