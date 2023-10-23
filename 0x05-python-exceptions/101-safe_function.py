@@ -3,12 +3,11 @@
 import sys
 
 def safe_function(fct, *args):
-
+    rlt = None
     try:
-        result = fct(*args)
+        rlt = fct(*args)
 
-    except Exception as error:
-        sys.stderr.write("Exception: {}\n".format(error))
-        return None
+    except Exception as err:
+        sys.stderr.write("Exception: {}\n".format(err))
 
-    return result
+    return rlt
