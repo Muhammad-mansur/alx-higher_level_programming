@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+import sys
+
 def safe_print_integer_err(value):
 
     try:
@@ -7,5 +9,5 @@ def safe_print_integer_err(value):
         return True
 
     except Exception as e:
-        sys.stderr.write("Exception: " + str(e) + "\n"
+        sys.stderr.write("Exception: " + str(e) + "\n")
         return False
