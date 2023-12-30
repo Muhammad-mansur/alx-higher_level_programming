@@ -8,4 +8,6 @@ def print_last_digit(number):
     # Get the last digit
     last_digit = number % 10
 
+    print(last_digit, end="")
+
     return last_digit
