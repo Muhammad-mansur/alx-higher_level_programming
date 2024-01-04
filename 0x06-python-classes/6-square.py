@@ -14,12 +14,12 @@ class Square:
 
     @property
     def size(self):
-        """ to retrieve it """
+        """ to retrieve the attribute """
         return self.__size
 
     @size.setter
     def size(self, value):
-        """ to set it """
+        """ to set the attribute """
         self.__size = value
 
         if type(value) is not int:
@@ -30,12 +30,12 @@ class Square:
 
     @property
     def position(self):
-        """ to retrieve it """
+        """ to retrieve the attribute """
         return self.__position
 
     @position.setter
     def position(self, value):
-        """ to set it """
+        """ to set the attribute """
         self.__position = value
 
         if type(value) != tuple or len(value) != 2:
@@ -52,7 +52,7 @@ class Square:
         return self.__size ** 2
 
     def my_print(self):
-        """ """
+        """ print the square to stdout with xcter ### """
         if self.__size == 0:
             print()
 
