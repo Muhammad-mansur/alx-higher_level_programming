@@ -131,7 +131,3 @@ class Rectangle:
         width = size
         height = size
         return cls(width, height)
-
-
-
-
