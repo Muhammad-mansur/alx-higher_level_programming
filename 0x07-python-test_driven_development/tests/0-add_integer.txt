@@ -1,7 +1,7 @@
 Doctest
 
 Import module:
-    >>> mod = .__import__("0-add_integer")
+    >>> mod = __import__("0-add_integer")
 
 Check module documentation:
     >>> len(mod.__doc__) > 1
@@ -12,7 +12,7 @@ Import Function:
     >>> add_integer = __import__('0-add_integer').add_integer
 
 Check function documentation:
-    >>> len(add_integer.__doc__) > 1)
+    >>> len(add_integer.__doc__) > 1
     True
 
 Testing positive integers:
@@ -28,8 +28,8 @@ Testing negative integers:
     -8
 
 Testing (a) with a pre-inputted b value:
-    >>> add_integer(2)
-    100
+    >>> add_integer(1)
+    99
 
 Testing float with integer:
     >>> add_integer(5.2, 5)
