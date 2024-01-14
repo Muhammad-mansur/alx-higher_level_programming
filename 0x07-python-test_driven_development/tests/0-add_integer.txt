@@ -29,7 +29,7 @@ Errors:
 
 Testing aType:
     >>> add_integer('apple', 6)
-    Traceback (most recent call last):
+    Traceback (most recent call last)
     ...
     TypeError: a must be an integer
 
