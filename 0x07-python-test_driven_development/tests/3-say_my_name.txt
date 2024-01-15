@@ -7,9 +7,9 @@ My name is John Smith
 My name is Walter White
 
 >>> say_my_name("Bob")
-Bob
+My name is Bob
 
->>> say_my_name(1, "white")
+>>> say_my_name(None, "white")
 Traceback (most recent call last):
 ...
 TypeError: first_name must be a string
@@ -22,7 +22,7 @@ TypeError: last_name must be a string
 >>> say_my_name()
 Traceback (most recent call last):
 ...
-TypeError: say_my_name() missing 1 positional required agrument: 'first_name'
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
 
 >>> say_my_name([])
 Traceback (most recent call last):
@@ -32,4 +32,4 @@ TypeError: first_name must be a string
 >>> say_my_name('w', 's', 'e')
 Traceback (most recent call last):
 ...
-TypeError: say_my_name() does not take 3 positional arguments
+TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
