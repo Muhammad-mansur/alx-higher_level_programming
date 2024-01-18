@@ -1,14 +1,4 @@
-Doctest
-
 Import module:
-    >>> mod = __import__("0-add_integer")
-
-Check module documentation:
-    >>> len(mod.__doc__) > 1
-    True
-
-
-Import Function:
     >>> add_integer = __import__('0-add_integer').add_integer
 
 Check function documentation:
@@ -35,21 +25,24 @@ Testing float with integer:
     >>> add_integer(5.2, 5)
     10
 
-Teting a negative float and a positive integer:
+Testing a negative float and a positive integer:
     >>> add_integer(-3.2, 5)
     1
 
+Testing a float and a negative integer:
+    >>> add_integer(8.2, -6)
+    2
 
-Errors:
+""" Errors """
 
 Testing aType:
-    >>> add_integer('apple', 6)
+    >>> add_integer('a', 6)
     Traceback (most recent call last):
     ...
     TypeError: a must be an integer
 
 Testing bType:
-    >>> add_integer(6, 'none')
+    >>> add_integer(6, None)
     Traceback (most recent call last):
     ...
     TypeError: b must be an integer
