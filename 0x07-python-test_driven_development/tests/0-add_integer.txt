@@ -38,17 +38,17 @@ Testing a float and a negative integer:
 Testing aType:
     >>> add_integer('a', 6)
     Traceback (most recent call last):
-    ...
+        ...
     TypeError: a must be an integer
 
 Testing bType:
     >>> add_integer(6, None)
     Traceback (most recent call last):
-    ...
+        ...
     TypeError: b must be an integer
 
 Testing 0 args:
     >>> add_integer()
     Traceback (most recent call last):
-    ...
+        ...
     TypeError: add_integer() missing 1 required positinal argument: 'a'
