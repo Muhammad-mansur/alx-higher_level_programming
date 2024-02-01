@@ -1,0 +1,54 @@
+>>> divide = __import__('2-matrix_divided').matrix_divided
+
+>>> print(divide([[1, 2, 3], [4, 5, 6]], 3))
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+>>> print(divide([[1, 2, 3], [4, 5, 6]], 0))
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero
+
+>>> print(divide([[1, 2], [3, 4]], '23'))
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+
+>>> print(divide([[1, 2, 3, 4], [1, 2, 3]], 1))
+Traceback (most recent call last):
+...
+TypeError: Each row of the matrix must have the same size
+
+>>> print(divide([[1, 2, 'str'], [1, 2, 3]], 6))
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> print(divide(None, 6))
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> print(divide([], 3))
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> print(divide([[], [], []], 3))
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> print(divide([[1, 2, 'str'], "text"], 6))
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> divide()
+Traceback (most recent call last):
+...
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+>>> divide(22)
+Traceback (most recent call last):
+...
+TypeError: matrix_divided() missing 1 required positional argument: 'div'

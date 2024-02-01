@@ -16,26 +16,23 @@ def matrix_divided(matrix, div):
         Return: a new matrix with All elements of the matrix
         should be divided by div, rounded to 2 decimal places
     """
-    if not isinstance(matrix, list) or len(matrix) == 0:
-        raise TypeError(error_message)
-    for row in matrix:
-        if not isintance(row, list):
-            raise TypeError(error_message)
-        for x in row:
-            if not isintance(x, int) and not isinstance(x, float):
-                raise TypeError(error_message)
+    if not isinstance(matrix, list) or not all(isinstance(row, list) for row in matrix) \
+            or not all(isinstance(num, (int, float)) for row in matrix for num in row):
+        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
 
-    row_size = len(matrix[0])
+    # Check if all rows of the matrix have the same size
+    if len(set(len(row) for row in matrix)) > 1:
+        raise TypeError("Each row of the matrix must have the same size")
 
-    for row in matrix:
-        if len(row) != row_size:
-            raise TypeError("Each row of the matrix must have the same size")
-
-    if type(div) is not int or type(div) is not float:
+    # Check if div is a number (integer or float)
+    if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
 
+    # Check if div is not equal to 0
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
-    new_matrix = [[round(x / div, 2) for x in row] for row in matrix]
+    # Divide all elements of the matrix by div, rounded to 2 decimal places
+    new_matrix = [[round(num / div, 2) for num in row] for row in matrix]
+
     return new_matrix
