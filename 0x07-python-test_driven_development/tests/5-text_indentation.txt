@@ -1,0 +1,30 @@
+Import module:
+	>>> mod = __import__("5-text_indentation")
+
+Import function:
+	>>> text_indentation = mod.text_indentation
+
+Check modiule doc:
+	>>> len(mod.__doc__) > 1
+	True
+
+Check function doc:
+	>>> len(text_indentation.__doc__) > 1
+	True
+
+checking for a space after a string
+        >>> text_indentation("""Kassy.  """)
+        Kassy.
+        <BLANKLINE>
+
+Checking for multiple spaces:
+	 >>> text_indentation("   kassy.  are you there?   ")
+	 kassy.
+	 <BLANKLINE>
+	 are you there?
+	 <BLANKLINE>
+
+checking for space before a string
+         >>> text_indentation("""    did you take it?""")
+         did you take it?
+         <BLANKLINE>
