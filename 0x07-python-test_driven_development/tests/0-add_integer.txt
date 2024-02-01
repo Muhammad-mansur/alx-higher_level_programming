@@ -1,54 +1,44 @@
-
 Import module:
-        >>> mod = __import__("0-add_integer")
+	>>> add_integer = __import__('0-add_integer').add_integer
 
-check module documentation:
-        >>> len(mod.__doc__) > 1
-        True
+Test basic:
+	>>> add_integer(5, 1)
+	6
 
-Importing the function from the module:
-	>>> add_integer = __import__("0-add_integer").add_integer
+Test negative:
+	>>> add_integer(-7, 7)
+	0
 
-check function documentation:
-       >>> len(add_integer.__doc__) > 1
-       True
+Test basicFloat:
+	>>> add_integer(2.1, 2.6)
+	4
 
-adding two positive integer
-        >>> add_integer(1, 2)
-        3
+Test intFloat:
+	>>> add_integer(2, 7.3)
+	9
 
-adding two negative integer
-        >>> add_integer(-1, -2)
-        -3
+Test int:
+	>>> add_integer(4)
+	102
 
-adding a float and an integer
-        >>> add_integer(8.2, 2)
-        10
+Test float:
+	>>> add_integer(4.4)
+	102
 
-adding a positive integer and a negative integer
-        >>> add_integer(8, -6)
-        2
+Test aType:
+	>>> add_integer("a", 4)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
 
-adding a negative integer and a positve integer
-        >>> add_integer(-4, 2)
-        -2
-
-adding a float and a negative integer
-        >>> add_integer(8.2, -6)
-        2
-
-Checking one arg:
-	>>> add_integer(1)
-	99
-
-Checking no args:
+Test bType:
+	>>> add_integer(33, None)
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+	
+Test empty:
 	>>> add_integer()
 	Traceback (most recent call last):
 	...
 	TypeError: add_integer() missing 1 required positional argument: 'a'
-
-Checking more than 2 args:
-	>>> add_integer(1, 2, 3)
-        Traceback (most recent call last):
-        ...
-        TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
