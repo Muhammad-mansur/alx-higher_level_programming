@@ -1,54 +1,54 @@
+
 Import module:
-    >>> add_integer = __import__('0-add_integer').add_integer
+        >>> mod = __import__("0-add_integer")
 
-Check function documentation:
-    >>> len(add_integer.__doc__) > 1
-    True
+check module documentation:
+        >>> len(mod.__doc__) > 1
+        True
 
-Testing positive integers:
-    >>> add_integer(10, 8)
-    18
+Importing the function from the module:
+	>>> add_integer = __import__("0-add_integer").add_integer
 
-Testing positive and negative integers:
-    >>> add_integer(-8, 10)
-    2
+check function documentation:
+       >>> len(add_integer.__doc__) > 1
+       True
 
-Testing negative integers:
-    >>> add_integer(-3, -5)
-    -8
+adding two positive integer
+        >>> add_integer(1, 2)
+        3
 
-Testing (a) with a pre-inputted b value:
-    >>> add_integer(1)
-    99
+adding two negative integer
+        >>> add_integer(-1, -2)
+        -3
 
-Testing float with integer:
-    >>> add_integer(5.2, 5)
-    10
+adding a float and an integer
+        >>> add_integer(8.2, 2)
+        10
 
-Testing a negative float and a positive integer:
-    >>> add_integer(-3.2, 5)
-    1
+adding a positive integer and a negative integer
+        >>> add_integer(8, -6)
+        2
 
-Testing a float and a negative integer:
-    >>> add_integer(8.2, -6)
-    2
+adding a negative integer and a positve integer
+        >>> add_integer(-4, 2)
+        -2
 
-""" Errors """
+adding a float and a negative integer
+        >>> add_integer(8.2, -6)
+        2
 
-Testing aType:
-    >>> add_integer('a', 6)
-    Traceback (most recent call last):
+Checking one arg:
+	>>> add_integer(1)
+	99
+
+Checking no args:
+	>>> add_integer()
+	Traceback (most recent call last):
+	...
+	TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Checking more than 2 args:
+	>>> add_integer(1, 2, 3)
+        Traceback (most recent call last):
         ...
-    TypeError: a must be an integer
-
-Testing bType:
-    >>> add_integer(6, None)
-    Traceback (most recent call last):
-        ...
-    TypeError: b must be an integer
-
-Testing 0 args:
-    >>> add_integer()
-    Traceback (most recent call last):
-        ...
-    TypeError: add_integer() missing 1 required positinal argument: 'a'
+        TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
