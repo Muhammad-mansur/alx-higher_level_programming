@@ -4,7 +4,7 @@
 
 
 def is_same_class(obj, a_class):
-    """ 
+    """
     Returns:
         True: if the object is exactly an intance of the specified class
         False: Otherwise
