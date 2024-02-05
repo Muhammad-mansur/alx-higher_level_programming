@@ -4,7 +4,7 @@
 
 
 class BaseGeometry:
-    """ 
+    """
     Raises:
         Exception: area() is not implemented
     """
