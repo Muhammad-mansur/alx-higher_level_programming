@@ -3,9 +3,6 @@
 """ class to json """
 
 
-import json
-
-
 def class_to_json(obj):
     """
     function that returns the dictionary description with
