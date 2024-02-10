@@ -126,3 +126,8 @@ class Rectangle(Base):
         """ prints in stdout the rectangle instance with the character # """
         for _ in range(self.__height):
             print("#" * self.__width)
+
+    def __str__(self):
+        """ Overriding the medthod """
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, 
+                self.y, self.width, self.height)
