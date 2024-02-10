@@ -106,3 +106,16 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
 
         self.__y = value
+
+    def validate(self, value, name):
+        """
+        Validates Attributes
+        """
+        if type(value) is not int:
+            raise TypeError(name + "must be an integer")
+
+        if self.__width <= 0 and self.__height <= 0:
+            raise ValueError(name + "must be > 0")
+
+        if self.__x < 0 and self.__y < 0:
+            raise ValueError(name + "must be >= 0")
