@@ -136,19 +136,27 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, 
                 self.y, self.width, self.height)
 
-    def update(self, *args):
+    def __update(self, id=None, width=None, height=None, x=None, y=None):
+        """ private update """
+        if id is not None:
+            self.id = id
+
+        if width is not None:
+            self.width = width
+
+        if height is not None:
+            self.height = height
+
+        if x is not None:
+            self.x = x
+
+        if y is not None:
+            self.y = y
+
+    def update(self, *args, **kwargs):
         """ Update # """
-        if len(args) >= 1:
-            self.id = args[0]
+        if args:
+            self.__update(*args)
 
-        if len(args) >= 2:
-            self.width = args[1]
-
-        if len(args) >= 3:
-            self.height = args[2]
-
-        if len(args) >= 4:
-            self.x = args[3]
-
-        if len(args) >= 5:
-            self.y = args[4]
+        if kwargs:
+            self.__update(**kwargs)
