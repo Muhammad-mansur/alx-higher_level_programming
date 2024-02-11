@@ -90,7 +90,7 @@ class Rectangle(Base):
         return self.__y
 
     @y.setter
-    def x(self, value):
+    def y(self, value):
         """
         Arg:
             value: new y
