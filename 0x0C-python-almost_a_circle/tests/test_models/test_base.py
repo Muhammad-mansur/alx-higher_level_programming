@@ -4,7 +4,7 @@
 
 
 import unittest
-import base from Base
+from models.base import Base
 
 
 class TestBase(unittest.TestCase):
