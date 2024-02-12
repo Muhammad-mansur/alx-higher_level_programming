@@ -133,8 +133,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """ Overriding the medthod """
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, 
-                self.y, self.width, self.height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+                self.id, self.x, self.y, self.width, self.height)
 
     def __update(self, id=None, width=None, height=None, x=None, y=None):
         """ private update """
