@@ -26,10 +26,10 @@ class Square(Rectangle):
         return self.width
 
     @size.setter
-    def size(self, size):
+    def size(self, value):
         """ attribute setter """
-        self.width = size
-        self.height = size
+        self.width = value
+        self.height = value
 
     def __update(self, id=None, size=None, x=None, y=None):
         """ private update """
