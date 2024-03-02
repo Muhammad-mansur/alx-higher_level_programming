@@ -2,11 +2,12 @@
 
 def square_matrix_simple(matrix=[]):
 
-    result = []
+    squared_matrix = []
 
-    for i in range(len(matrix)):
-        for j in range(len(matrix[i])):
-            square_v = matrix[i][j] ** 2
-            result[i][j] = square_v
+    for row in matrix:
+        squared_row = []
+        for num in row:
+            squared_row.append(num ** 2)
+        squared_matrix.append(squared_row)
 
-    return result
+    return squared_matrix
