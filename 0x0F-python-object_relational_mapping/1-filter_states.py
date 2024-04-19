@@ -8,7 +8,7 @@ if __name__ == '__main__':
     import MySQLdb
     import sys
 
-    # connect to MySQL server
+    """ connect to MySQL server """
     conn = MySQLdb.connect(
         host='localhost',
         port=3306,
@@ -17,21 +17,21 @@ if __name__ == '__main__':
         db=sys.argv[3]
     )
 
-    # create a cursor object
+    """ create a cursor object """
     cur = conn.cursor()
 
     cur.execute("SELECT * FROM states\
                 WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
 
-    # fetch all rows
+    """ fetch all rows """
     rows = cur.fetchall()
 
-    # iterate through each row and display results
+    """ iterate through each row and display results """
     for row in rows:
         print(row)
 
-    # close the cursor
+    """ close the cursor """
     cur.close
 
-    # close server connection
+    """ close server connection """
     conn.close
