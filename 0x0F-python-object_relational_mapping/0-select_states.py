@@ -1,27 +1,26 @@
 #!/usr/bin/python3
-
-""" Get all states """
-
+"""0. Get all states"""
 
 if __name__ == '__main__':
-    import sys
+
     import MySQLdb
+    import sys
 
     conn = MySQLdb.connect(
-        host="locahost",
-        port=3306,
-        user=sys.argv[1],
-        passwd=sys.argv[2],
-        db=sys.argv[3],
-    )
+            host="localhost",
+            port=3306,
+            user=sys.argv[1],
+            passwd=sys.argv[2],
+            db=sys.argv[3],
+            charset="utf8")
 
     cur = conn.cursor()
 
     cur.execute("SELECT * FROM states ORDER BY id ASC")
 
-    rows = cur.fetchall()
+    query_rows = cur.fetchall()
 
-    for row in rows:
+    for row in query_rows:
         print(row)
 
     cur.close()
