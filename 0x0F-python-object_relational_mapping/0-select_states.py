@@ -1,6 +1,6 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
-""" Get al states """
+""" Get all states """
 
 if __name__ = '__main__':
     import sys
