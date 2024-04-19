@@ -1,5 +1,7 @@
 #!/usr/bin/python3
+
 """0. Get all states"""
+
 
 if __name__ == '__main__':
 
@@ -18,9 +20,9 @@ if __name__ == '__main__':
 
     cur.execute("SELECT * FROM states ORDER BY id ASC")
 
-    query_rows = cur.fetchall()
+    rows = cur.fetchall()
 
-    for row in query_rows:
+    for row in rows:
         print(row)
 
     cur.close()
