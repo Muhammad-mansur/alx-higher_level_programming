@@ -20,7 +20,7 @@ if __name__ == '__main__':
 
     # Create session
     session = sessionmaker(bind=engine)
-    session = session()
+    session = Session()
 
     state = session.query(State).order_by(State.id).first()
 
