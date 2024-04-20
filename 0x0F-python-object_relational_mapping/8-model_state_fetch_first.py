@@ -5,7 +5,7 @@
 
 import sys
 from model_state import Base, State
-from sqlalchemy.orm import Sessionmaker
+from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 
 
@@ -19,10 +19,10 @@ if __name__ == '__main__':
     Base.metadata.create_all(engine)
 
     # Create session
-    Session = Sessionmaker(bind=engine)
-    Session = Session()
+    session = sessionmaker(bind=engine)
+    session = session()
 
-    state = Session.query(State).order_by(State.id).first()
+    state = session.query(State).order_by(State.id).first()
 
     if state:
         print('{}: {}'.format(state.id, state.name))
@@ -31,4 +31,4 @@ if __name__ == '__main__':
         print("Nothing")
     
     # Close session
-    Session.close()
+    session.close()
