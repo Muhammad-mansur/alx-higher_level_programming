@@ -8,24 +8,26 @@ from model_state import Base, State
 from sqlalchemy import Session
 from sqlalchemy import create_engine
 
-# Create engine
-engine = create_engine(
-    'mysql+mysqldb://{}:{}@localhost:3306/{}'
-    .format(sys.argv[1], sys.argv[2], sys.argv[3])
-)
 
-Base.metadata.create_all(engine)
+if __name__ == '__main__':
+    # Create engine
+    engine = create_engine(
+        'mysql+mysqldb://{}:{}@localhost:3306/{}'
+        .format(sys.argv[1], sys.argv[2], sys.argv[3])
+    )
 
-# Create session
-Session = Session(engine)
+    Base.metadata.create_all(engine)
 
-state = Session.query(State).order_by(State.id).first()
+    # Create session
+    Session = Session(engine)
 
-if state:
-    print('{}: {}'.format(state.id, state.name))
+    state = Session.query(State).order_by(State.id).first()
+
+    if state:
+        print('{}: {}'.format(state.id, state.name))
     
-else:
-    print('Nothing')
+    else:
+        print('Nothing')
     
-# Close session
-session.close()
+    # Close session
+    Session.close()
