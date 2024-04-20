@@ -23,10 +23,11 @@ if __name__ == '__main__':
     
     Base.metadata.create_all(engine)
     
-    states = session.query(State).filter(
-        State.name.like('%a%')).order_by(State.id).all()
+    # Query for state objects containing the letter 'a'
+    states_a = session.query(State)\
+        .filter(State.name.like('%a%')).order_by(State.id).all()
     
-    for state in states:
+    for state in states_a:
         print('{}: {}'.format(state.id, state.name))
 
     # Close session
