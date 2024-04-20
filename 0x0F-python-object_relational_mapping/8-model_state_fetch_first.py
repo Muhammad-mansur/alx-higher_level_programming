@@ -19,7 +19,7 @@ if __name__ == '__main__':
     Base.metadata.create_all(engine)
 
     # Create session
-    session = sessionmaker(bind=engine)
+    Session = sessionmaker(bind=engine)
     session = Session()
 
     state = session.query(State).order_by(State.id).first()
