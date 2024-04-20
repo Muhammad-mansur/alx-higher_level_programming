@@ -23,7 +23,7 @@ if __name__ == '__main__':
 
     Base.metadata.create_all(engine)
 
-    state = session.query(State).filter(id='2').first()
+    state = session.query(State).filter(state.id == 2).first()
     # Update the name of id=2 to "New Mexico"
     state.name = "New Mexico"
 
