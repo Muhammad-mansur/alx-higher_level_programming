@@ -31,7 +31,7 @@ if __name__ == '__main__':
         print(row)
 
     """ close the cursor """
-    cur.close
+    cur.close()
 
     """ close server connection """
-    conn.close
+    conn.close()
