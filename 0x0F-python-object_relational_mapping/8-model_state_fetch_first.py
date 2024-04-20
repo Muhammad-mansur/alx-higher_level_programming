@@ -5,7 +5,7 @@
 
 import sys
 from model_state import Base, State
-from sqlalchemy import session
+from sqlalchemy import Session
 from sqlalchemy import create_engine
 
 # Create engine
@@ -17,9 +17,9 @@ engine = create_engine(
 Base.metadata.create_all(engine)
 
 # Create session
-session = session(engine)
+Session = Session(engine)
 
-state = session.query(State).order_by(State.id).first()
+state = Session.query(State).order_by(State.id).first()
 
 if state:
     print('{}: {}'.format(state.id, state.name))
