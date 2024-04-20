@@ -5,7 +5,7 @@
 
 import sys
 from model_state import Base, State
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Sessionmaker
 from sqlalchemy import create_engine
 
 
@@ -19,7 +19,8 @@ if __name__ == '__main__':
     Base.metadata.create_all(engine)
 
     # Create session
-    Session = Session(engine)
+    Session = Sessionmaker(bind=engine)
+    Session = Session()
 
     state = Session.query(State).order_by(State.id).first()
 
