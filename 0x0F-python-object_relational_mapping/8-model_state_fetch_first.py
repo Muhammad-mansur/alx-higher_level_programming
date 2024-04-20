@@ -17,11 +17,11 @@ if __name__ == '__main__':
         sys.argv[3]),
     )
 
-    Base.metadata.create_all(engine)
-
     # Create session
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = sessionmaker(bind=engine)
+    session = session()
+    
+    Base.metadata.create_all(engine)
 
     state = session.query(State).order_by(State.id).first()
 
