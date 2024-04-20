@@ -20,16 +20,16 @@ if __name__ == '__main__':
     # Create session
     session = sessionmaker(bind=engine)
     session = session()
-    
+
     Base.metadata.create_all(engine)
 
     state = session.query(State).order_by(State.id).first()
 
     if state:
         print('{}: {}'.format(state.id, state.name))
-    
+
     else:
         print("Nothing")
-    
+
     # Close session
     session.close()
