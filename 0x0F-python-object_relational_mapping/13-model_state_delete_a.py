@@ -22,15 +22,15 @@ if __name__ == '__main__':
     session = session()
 
     Base.metadata.create_all(engine)
-    
+
     states = session.query(State).filter(state.name.like('%a')).all()
-    
+
     # If name containing letter the 'a' is present, delete it
     for state in states:
         session.delete(state)
-    
-    # Commit changes    
+
+    # Commit changes
     session.commit()
-    
+
     # Close session
     session.close()
