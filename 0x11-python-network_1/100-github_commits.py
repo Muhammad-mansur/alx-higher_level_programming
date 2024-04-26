@@ -27,4 +27,3 @@ if __name__ == "__main__":
     else:
         # Display an error message if the request was not successful
         print(f"Error: {response.status_code}")
-
